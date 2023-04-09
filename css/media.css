@@ -1,0 +1,28 @@
+/* Media Start */
+@media (max-width: 1024px) {
+  .register-form {
+    width: 290px;
+  }
+
+  .register__title {
+    font-size: calc(18px + (20 + 20 * 0.7) * (100vw - 320px) / 1920);
+  }
+}
+
+@media (max-width: 992px) {
+  .wave {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: calc(18px + (18 + 18 * 0.7) * (100vw - 320px) / 1920);
+  }
+
+  .btns {
+    flex-direction: column;
+  }
+}
+
+/* Media End */

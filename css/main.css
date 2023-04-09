@@ -1,0 +1,1572 @@
+@import './_fonts.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'SpaceGrotesk', sans-serif;
+}
+
+body {
+  background: #f1f5f8;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1344px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 12px;
+}
+
+/* Login Start */
+.wave {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  z-index: -1;
+}
+
+.login-content {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-form {
+  width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.register__title {
+  margin-bottom: 6px;
+  color: #333;
+  font-size: calc(18px + 20 * (100vw / 1920));
+  text-align: center;
+}
+
+.register__block {
+  border: none;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 2px solid #d9d9d9;
+}
+
+.register__label {
+  color: #d9d9d9;
+}
+
+.register__label i {
+  transition: .3s;
+}
+
+.register__block>.register__div {
+  width: 100%;
+  height: 40px;
+  position: relative;
+}
+
+.register__block>.register__div>.register__subtitle {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  font-size: 18px;
+  transition: .3s;
+}
+
+.register__block:before,
+.register__block:after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background-color: #38d39f;
+  transition: .4s;
+}
+
+.register__block:before {
+  right: 50%;
+}
+
+.register__block:after {
+  left: 50%;
+}
+
+.register__block.focus:before,
+.register__block.focus:after {
+  width: 50%;
+}
+
+.register__block.focus>.register__div>.register__subtitle {
+  top: -8px;
+}
+
+.register__block.focus>.register__label {
+  color: #38d39f;
+}
+
+.register__block>.register__div>.register__input {
+  border: none;
+  outline: none;
+  padding: 8px;
+  width: 100%;
+  height: 100%;
+  color: #555;
+  background: transparent;
+  font-size: 18px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.register__block.pass {
+  margin-bottom: 4px;
+}
+
+.register__btn {
+  border: none;
+  outline: none;
+  border-radius: 24px;
+  padding: 12px 0;
+  width: 100%;
+  display: block;
+  color: #fff;
+  background: linear-gradient(to right, #32be8f, #38d39f, #32be8f);
+  background-size: 200%;
+  font-size: 18px;
+  transition: .5s linear;
+  cursor: pointer;
+}
+
+.register__btn:hover {
+  background-position: right;
+}
+
+.show-btn {
+  border: none;
+  outline: none;
+  width: max-content;
+  margin-left: auto;
+  color: #32be8f;
+  background: transparent;
+  font-size: 20px;
+  /* text-align: right; */
+  cursor: pointer;
+}
+
+/* Login End */
+
+.home,
+.main,
+#clear-storage-btn {
+  display: none;
+}
+
+/* Clear Storage Button */
+#clear-storage-btn {
+  border: none;
+  outline: none;
+  color: #f44336;
+  background: transparent;
+  font-size: 18px;
+  font-weight: 600;
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  cursor: pointer;
+}
+
+.icon {
+  transition: .35s linear;
+}
+
+#clear-storage-btn:hover .icon {
+  transform: translateX(8px);
+}
+
+/* Clear Storage Button */
+
+/* Content Start */
+.content {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.title {
+  max-width: 980px;
+  width: 100%;
+  color: #252525;
+  font-size: calc(18px + 18 * (100vw / 1920));
+  text-align: center;
+}
+
+.btns {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn {
+  border: 2px outset;
+  outline: none;
+  border-radius: 30px;
+  padding: 8px 16px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all .5s ease;
+}
+
+.easy {
+  border-color: #14a014;
+  background: #14a014;
+}
+
+.medium {
+  border-color: #f4a41c;
+  background: #f4a41c;
+}
+
+.hard {
+  border-color: #f44336;
+  background: #f44336;
+}
+
+.btn:active {
+  border: 2px inset;
+}
+
+.easy:active {
+  border-color: #14a014;
+}
+
+.medium:active {
+  border-color: #f4a41c;
+}
+
+.hard:active {
+  border-color: #f44336;
+}
+
+.easy:hover {
+  background: #129312;
+}
+
+.medium:hover {
+  background: #e09920;
+}
+
+.hard:hover {
+  background: #ef0a30;
+}
+
+.btn:hover .span {
+  transform: rotate(360deg);
+}
+
+.span {
+  border: 1px solid;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  transition: 1.5s ease;
+}
+
+.easy .span {
+  color: #109e10;
+  font-weight: 600;
+}
+
+.medium .span {
+  color: #e09920;
+  font-weight: 600;
+}
+
+.hard .span {
+  color: #b8122e;
+  font-weight: 600;
+}
+
+.fade-right {
+  transform: translate3d(-150px, 0, 0);
+  opacity: 0;
+}
+
+.fade-left {
+  transform: translate3d(150px, 0, 0);
+  opacity: 0;
+}
+
+.fade-bottom {
+  transform: translate3d(0, 150px, 0);
+  opacity: 0;
+}
+
+.btn.active {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+
+/* Content End */
+
+
+
+
+
+
+.full-game {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.full-board {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#game-board1 {
+  height: 320px;
+  width: 80%;
+  background: #FFFFFF;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+#game-board2 {
+  height: 320px;
+  width: 80%;
+  background: #FFFFFF;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+h2 {
+  font-size: 36px;
+  margin-top: 0;
+  color: #333333;
+  text-align: center;
+}
+
+.word-box {
+  display: inline-block;
+  margin: 10px;
+  padding: 20px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  user-select: none;
+}
+
+.word-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+
+.word-box.selected {
+  background-color: #2ecc71;
+  color: #FFFFFF;
+  box-shadow: none;
+  transform: none;
+  cursor: default;
+}
+
+.word-box.matched {
+  background-color: #2ecc71;
+  color: #FFFFFF;
+  box-shadow: none;
+  transform: none;
+  cursor: default;
+  transition: none;
+}
+
+.word-box.wrong {
+  background-color: #e74c3c;
+  color: #FFFFFF;
+  box-shadow: none;
+  transform: none;
+  cursor: default;
+  transition: none;
+}
+
+.game-rating {
+  margin-top: 30px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rating-nums {
+  display: none;
+}
+
+.result {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 30px;
+  color: #333333;
+}
+
+.matched-answer {
+  margin-right: 10px;
+}
+
+.wrong-answer {
+  margin: 0 10px;
+}
+
+.end {
+  display: none;
+}
+
+#reset-button {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.2s ease-in-out;
+}
+
+#reset-button:hover {
+  background-color: #2980b9;
+}
+
+@import url("//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css");
+
+#info {
+  position: absolute;
+  right: 8.75em;
+  bottom: 8.75em;
+  background-color: #ededed;
+  color: #383635;
+  padding: 0.5rem 1rem;
+  width: 20rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.my-pens {
+  animation: appear 1s 1;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  position: fixed;
+  right: 0.625rem;
+  bottom: 0.625rem;
+  z-index: 1000;
+}
+
+.my-pens .author {
+  cursor: pointer;
+  position: relative;
+}
+
+.my-pens .author img {
+  animation: notice-me 8s infinite;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+  position: relative;
+  z-index: 30;
+  width: 4.375em;
+  height: 4.375em;
+  border-radius: 50%;
+  border: 1px solid #000;
+  transition: all 0.3s;
+}
+
+.my-pens .author:after {
+  content: '';
+  font-family: "FontAwesome";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: #fff;
+  font-size: 1.875rem;
+  transition: all 0.3s;
+  transform: rotate(-90deg) scale(0.5);
+  opacity: 0;
+  z-index: 50;
+}
+
+.my-pens:hover:before {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 17.47083333333333em;
+  height: 4.375em;
+}
+
+.my-pens:hover:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 17.47083333333333em;
+  width: 4.375em;
+}
+
+.my-pens:hover .author img {
+  filter: grayscale(100%);
+}
+
+.my-pens:hover .author:after {
+  transform: rotate(0deg) scale(1);
+  opacity: 1;
+}
+
+.my-pens:hover .pens ul li:nth-child(1) {
+  transform: translatex(-4.345833333333333em);
+}
+
+.my-pens:hover .pens ul li:nth-child(1):hover {
+  transform: translatex(-4.345833333333333em) scale(1.5);
+}
+
+.my-pens:hover .pens ul li:nth-child(2) {
+  transform: translatey(-4.316666666666666em);
+}
+
+.my-pens:hover .pens ul li:nth-child(2):hover {
+  transform: translatey(-4.316666666666666em) scale(1.5);
+}
+
+.my-pens:hover .pens ul li:nth-child(3) {
+  transform: translatex(-8.6625em);
+}
+
+.my-pens:hover .pens ul li:nth-child(3):hover {
+  transform: translatex(-8.6625em) scale(1.5);
+}
+
+.my-pens:hover .pens ul li:nth-child(4) {
+  transform: translatey(-8.633333333333333em);
+}
+
+.my-pens:hover .pens ul li:nth-child(4):hover {
+  transform: translatey(-8.633333333333333em) scale(1.5);
+}
+
+.my-pens:hover .pens ul li:nth-child(5) {
+  transform: translatex(-12.979166666666666em);
+}
+
+.my-pens:hover .pens ul li:nth-child(5):hover {
+  transform: translatex(-12.979166666666666em) scale(1.5);
+}
+
+.my-pens:hover .pens ul li:nth-child(6) {
+  transform: translatey(-12.95em);
+}
+
+.my-pens:hover .pens ul li:nth-child(6):hover {
+  transform: translatey(-12.95em) scale(1.5);
+}
+
+.my-pens:hover .pens ul li:nth-child(7) {
+  transform: translatex(-17.295833333333334em);
+}
+
+.my-pens:hover .pens ul li:nth-child(7):hover {
+  transform: translatex(-17.295833333333334em) scale(1.5);
+}
+
+.my-pens:hover .pens ul li:nth-child(8) {
+  transform: translatey(-17.266666666666666em);
+}
+
+.my-pens:hover .pens ul li:nth-child(8):hover {
+  transform: translatey(-17.266666666666666em) scale(1.5);
+}
+
+.my-pens:hover .pens ul li:nth-child(9) {
+  transform: translatex(-21.612499999999997em);
+}
+
+.my-pens:hover .pens ul li:nth-child(9):hover {
+  transform: translatex(-21.612499999999997em) scale(1.5);
+}
+
+.my-pens:hover .pens ul li:nth-child(10) {
+  transform: translatey(-21.583333333333332em);
+}
+
+.my-pens:hover .pens ul li:nth-child(10):hover {
+  transform: translatey(-21.583333333333332em) scale(1.5);
+}
+
+.my-pens .pens ul#pens-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.my-pens .pens ul#pens-list li {
+  position: absolute;
+  top: 0.729166666666667em;
+  left: 0.729166666666667em;
+  transition: all 0.3s;
+  transition-delay: 0;
+  z-index: 20;
+}
+
+.my-pens .pens ul#pens-list li a {
+  position: relative;
+}
+
+.my-pens .pens ul#pens-list li img {
+  width: 2.916666666666667em;
+  position: relative;
+  height: 2.916666666666667em;
+  border-radius: 50%;
+  border: 1px solid #000;
+}
+
+.wrapper {
+  font-family: 'Source Code Pro', monospace;
+  font-weight: 900;
+  display: none;
+}
+
+.timer {
+  position: relative;
+  border: 20px solid #ff7e5e;
+  border-style: none none solid;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  color: #ff7e5e;
+  display: flex;
+  justify-content: center;
+  animation: noborder 60s 1, alarm 1s infinite;
+  animation-delay: 0s, 60s;
+  animation-fill-mode: forwards;
+}
+
+.timer div#min,
+.timer #sectens,
+.timer #secones {
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.timer div#min span:not(:first-child),
+.timer #sectens span:not(:first-child),
+.timer #secones span:not(:first-child) {
+  position: absolute;
+  top: 150px;
+  left: 0px;
+}
+
+.timer #colon {
+  position: relative;
+}
+
+.timer #min span#min_1 {
+  animation: popout 1s 1;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+.timer #min span#min_0 {
+  animation: popin 1s 1;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+.timer #sectens span#sectens_6 {
+  animation: popout 1s 1;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+.timer #sectens span#sectens_5 {
+  animation: popin 1s 1s 1, popout2 1s 1s 1;
+  animation-delay: 0s, 10s;
+  animation-fill-mode: forwards;
+}
+
+.timer #sectens span#sectens_4 {
+  animation: popin 1s 1s 1, popout2 1s 1s 1;
+  animation-delay: 10s, 20s;
+  animation-fill-mode: forwards;
+}
+
+.timer #sectens span#sectens_3 {
+  animation: popin 1s 1s 1, popout2 1s 1s 1;
+  animation-delay: 20s, 30s;
+  animation-fill-mode: forwards;
+}
+
+.timer #sectens span#sectens_2 {
+  animation: popin 1s 1s 1, popout2 1s 1s 1;
+  animation-delay: 30s, 40s;
+  animation-fill-mode: forwards;
+}
+
+.timer #sectens span#sectens_1 {
+  animation: popin 1s 1s 1, popout2 1s 1s 1;
+  animation-delay: 40s, 50s;
+  animation-fill-mode: forwards;
+}
+
+.timer #sectens span#sectens_0 {
+  animation: popin 1s 1s 1;
+  animation-delay: 50s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_60 {
+  animation: popout 1s 1;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_59 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 0s, 1s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_58 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 1s, 2s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_57 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 2s, 3s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_56 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 3s, 4s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_55 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 4s, 5s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_54 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 5s, 6s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_53 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 6s, 7s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_52 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 7s, 8s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_51 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 8s, 9s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_50 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 9s, 10s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_49 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 10s, 11s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_48 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 11s, 12s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_47 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 12s, 13s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_46 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 13s, 14s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_45 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 14s, 15s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_44 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 15s, 16s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_43 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 16s, 17s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_42 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 17s, 18s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_41 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 18s, 19s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_40 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 19s, 20s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_39 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 20s, 21s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_38 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 21s, 22s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_37 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 22s, 23s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_36 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 23s, 24s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_35 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 24s, 25s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_34 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 25s, 26s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_33 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 26s, 27s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_32 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 27s, 28s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_31 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 28s, 29s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_30 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 29s, 30s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_29 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 30s, 31s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_28 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 31s, 32s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_27 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 32s, 33s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_26 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 33s, 34s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_25 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 34s, 35s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_24 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 35s, 36s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_23 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 36s, 37s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_22 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 37s, 38s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_21 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 38s, 39s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_20 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 39s, 40s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_19 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 40s, 41s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_18 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 41s, 42s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_17 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 42s, 43s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_16 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 43s, 44s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_15 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 44s, 45s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_14 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 45s, 46s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_13 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 46s, 47s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_12 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 47s, 48s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_11 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 48s, 49s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_10 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 49s, 50s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_9 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 50s, 51s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_8 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 51s, 52s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_7 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 52s, 53s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_6 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 53s, 54s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_5 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 54s, 55s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_4 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 55s, 56s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_3 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 56s, 57s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_2 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 57s, 58s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_1 {
+  animation: popin 1s 1, popout2 1s 1;
+  animation-delay: 58s, 59s;
+  animation-fill-mode: forwards;
+}
+
+.timer #secones span#secones_0 {
+  animation: popin 1s 1;
+  animation-delay: 59s;
+  animation-fill-mode: forwards;
+}
+
+@-moz-keyframes notice-me {
+
+  0%,
+  40% {
+    transform: translatey(0) rotate(0deg);
+  }
+
+  55% {
+    transform: rotate(-5deg);
+  }
+
+  60% {
+    transform: rotate(5deg);
+  }
+
+  65%,
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@-webkit-keyframes notice-me {
+
+  0%,
+  40% {
+    transform: translatey(0) rotate(0deg);
+  }
+
+  55% {
+    transform: rotate(-5deg);
+  }
+
+  60% {
+    transform: rotate(5deg);
+  }
+
+  65%,
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@-o-keyframes notice-me {
+
+  0%,
+  40% {
+    transform: translatey(0) rotate(0deg);
+  }
+
+  55% {
+    transform: rotate(-5deg);
+  }
+
+  60% {
+    transform: rotate(5deg);
+  }
+
+  65%,
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes notice-me {
+
+  0%,
+  40% {
+    transform: translatey(0) rotate(0deg);
+  }
+
+  55% {
+    transform: rotate(-5deg);
+  }
+
+  60% {
+    transform: rotate(5deg);
+  }
+
+  65%,
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@-moz-keyframes appear {
+  from {
+    opacity: 0;
+    transform: translatey(50px) scale(0.5);
+  }
+
+  to {
+    opacity: 1;
+    transform: translatey(0px) scale(1);
+  }
+
+}
+
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:900");
+
+@-webkit-keyframes appear {
+  from {
+    opacity: 0;
+    transform: translatey(50px) scale(0.5);
+  }
+
+  to {
+    opacity: 1;
+    transform: translatey(0px) scale(1);
+  }
+
+}
+
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:900");
+
+@-o-keyframes appear {
+  from {
+    opacity: 0;
+    transform: translatey(50px) scale(0.5);
+  }
+
+  to {
+    opacity: 1;
+    transform: translatey(0px) scale(1);
+  }
+
+}
+
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:900");
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translatey(50px) scale(0.5);
+  }
+
+  to {
+    opacity: 1;
+    transform: translatey(0px) scale(1);
+  }
+
+
+}
+
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:900");
+
+@-moz-keyframes popout {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-150px) scale(0.8);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes popout {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-150px) scale(0.8);
+    opacity: 0;
+  }
+}
+
+@-o-keyframes popout {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-150px) scale(0.8);
+    opacity: 0;
+  }
+}
+
+@keyframes popout {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-150px) scale(0.8);
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes popout2 {
+  0% {
+    transform: translateY(-150px) scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-300px) scale(0.8);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes popout2 {
+  0% {
+    transform: translateY(-150px) scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-300px) scale(0.8);
+    opacity: 0;
+  }
+}
+
+@-o-keyframes popout2 {
+  0% {
+    transform: translateY(-150px) scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-300px) scale(0.8);
+    opacity: 0;
+  }
+}
+
+@keyframes popout2 {
+  0% {
+    transform: translateY(-150px) scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-300px) scale(0.8);
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes popin {
+  0% {
+    transform: translateY(0) scale(0.8);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-150px) scale(1);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes popin {
+  0% {
+    transform: translateY(0) scale(0.8);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-150px) scale(1);
+    opacity: 1;
+  }
+}
+
+@-o-keyframes popin {
+  0% {
+    transform: translateY(0) scale(0.8);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-150px) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes popin {
+  0% {
+    transform: translateY(0) scale(0.8);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-150px) scale(1);
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes alarm {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  10% {
+    transform: rotateZ(3deg);
+  }
+
+  30% {
+    transform: rotateZ(-3deg);
+  }
+
+  45% {
+    transform: rotateZ(2deg);
+  }
+
+  60% {
+    transform: rotateZ(-6deg);
+  }
+
+  80% {
+    transform: rotateZ(10deg);
+  }
+
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
+
+@-webkit-keyframes alarm {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  10% {
+    transform: rotateZ(3deg);
+  }
+
+  30% {
+    transform: rotateZ(-3deg);
+  }
+
+  45% {
+    transform: rotateZ(2deg);
+  }
+
+  60% {
+    transform: rotateZ(-6deg);
+  }
+
+  80% {
+    transform: rotateZ(10deg);
+  }
+
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
+
+@-o-keyframes alarm {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  10% {
+    transform: rotateZ(3deg);
+  }
+
+  30% {
+    transform: rotateZ(-3deg);
+  }
+
+  45% {
+    transform: rotateZ(2deg);
+  }
+
+  60% {
+    transform: rotateZ(-6deg);
+  }
+
+  80% {
+    transform: rotateZ(10deg);
+  }
+
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
+
+@keyframes alarm {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  10% {
+    transform: rotateZ(3deg);
+  }
+
+  30% {
+    transform: rotateZ(-3deg);
+  }
+
+  45% {
+    transform: rotateZ(2deg);
+  }
+
+  60% {
+    transform: rotateZ(-6deg);
+  }
+
+  80% {
+    transform: rotateZ(10deg);
+  }
+
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
+
+@-moz-keyframes noborder {
+  from {
+    border: 5px solid #ff7e5e;
+  }
+
+  to {
+    border: 5px solid #fff;
+  }
+}
+
+@-webkit-keyframes noborder {
+  from {
+    border: 5px solid #ff7e5e;
+  }
+
+  to {
+    border: 5px solid #fff;
+  }
+}
+
+@-o-keyframes noborder {
+  from {
+    border: 5px solid #ff7e5e;
+  }
+
+  to {
+    border: 5px solid #fff;
+  }
+}
+
+@keyframes noborder {
+  from {
+    border: 5px solid #ff7e5e;
+  }
+
+  to {
+    border: 5px solid #fff;
+  }
+}

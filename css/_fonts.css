@@ -1,0 +1,19 @@
+/* SpaceGrotesk */
+@font-face {
+  font-family: 'SpaceGrotesk';
+  src: url(../fonts/SpaceGrotesk-Regular.ttf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'SpaceGrotesk';
+  src: url(../fonts/SpaceGrotesk-Medium.ttf);
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'SpaceGrotesk';
+  src: url(../fonts/SpaceGrotesk-SemiBold.ttf);
+  font-weight: 600;
+}
+/* SpaceGrotesk */
